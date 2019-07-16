@@ -23,7 +23,12 @@ public class UserController {
     }
 
     @RequestMapping("/index")
-    public String index() {
+    public String index(Model model) {
+        Subject subject = SecurityUtils.getSubject();
+        if(subject.isAuthenticated())
+        {
+            model.addAttribute("msg","已经认证");
+        }
         return "index";
     }
 
