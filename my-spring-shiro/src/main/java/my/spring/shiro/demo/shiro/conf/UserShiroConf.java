@@ -28,6 +28,13 @@ public class UserShiroConf {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         Map<String,String> filter = new LinkedHashMap<String, String>();
+        filter.put("/user/index","anon");
+        filter.put("/user/login","anon");
+        filter.put("/user/add","authc");
+        filter.put("/user/del","authc");
+        shiroFilterFactoryBean.setFilterChainDefinitionMap(filter);
+        shiroFilterFactoryBean.setLoginUrl("login");
+        return shiroFilterFactoryBean;
     }
 
 }

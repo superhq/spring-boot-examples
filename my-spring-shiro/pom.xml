@@ -8,10 +8,10 @@
         <version>2.1.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.neo</groupId>
-    <artifactId>spring-boot-shiro</artifactId>
+    <groupId>my.spring.shiro</groupId>
+    <artifactId>demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-boot-shiro</name>
+    <name>demo</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -26,20 +26,23 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
             <version>1.4.0</version>
-            <scope>compile</scope>
         </dependency>
+
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>5.1.7.RELEASE</version>
-            <scope>compile</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
