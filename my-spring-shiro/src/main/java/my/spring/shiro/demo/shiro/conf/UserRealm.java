@@ -9,11 +9,15 @@ import org.apache.shiro.subject.PrincipalCollection;
 import java.util.Collections;
 
 public class UserRealm extends AuthorizingRealm {
+    //授权逻辑
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        return null;
+        SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
+        authorizationInfo.addStringPermission("user:del");
+        return authorizationInfo;
     }
 
+    //认证逻辑
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String user = "hq";
