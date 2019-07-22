@@ -4,6 +4,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,11 +31,13 @@ public class UserController {
     }
 
     @RequestMapping("/add")
+    @RequiresPermissions("user:add")
     public String add() {
         return "add";
     }
 
     @RequestMapping("/del")
+    @RequiresPermissions("user:delete")
     public String del() {
         return "del";
     }
@@ -61,5 +64,11 @@ public class UserController {
     @RequestMapping("401")
     public String unAuth() {
         return "401";
+    }
+
+    @RequestMapping("500")
+    public String unAuthorization()
+    {
+        return "500";
     }
 }

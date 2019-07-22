@@ -13,7 +13,7 @@ public class UserRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-        authorizationInfo.addStringPermission("user:del");
+        authorizationInfo.addStringPermission("user:delete");
         return authorizationInfo;
     }
 
@@ -26,7 +26,7 @@ public class UserRealm extends AuthorizingRealm {
         if(!token.getUsername().equals("hq")){
             throw new AuthenticationException();
         }
-        SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo("",password,"");
+        SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo("",token.getPassword(),"");
 
 
         return simpleAuthenticationInfo;
