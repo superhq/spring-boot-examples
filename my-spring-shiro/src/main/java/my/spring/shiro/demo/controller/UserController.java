@@ -5,6 +5,7 @@ import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,13 +32,17 @@ public class UserController {
     }
 
     @RequestMapping("/add")
-    @RequiresPermissions("user:add")
-    public String add() {
+    //@RequiresPermissions("user:opt")
+    @RequiresRoles({"admin"})
+    public String add(HttpServletRequest request,Model model) {
+          System.out.println(request.getAttributeNames());
+//        model.addAttribute("msg",)
         return "add";
     }
 
     @RequestMapping("/del")
-    @RequiresPermissions("user:delete")
+    @RequiresRoles({"admin"})
+    //@RequiresPermissions("user:opt")
     public String del() {
         return "del";
     }
@@ -70,5 +75,12 @@ public class UserController {
     public String unAuthorization()
     {
         return "500";
+    }
+
+    @RequestMapping("error")
+    public String error(HttpServletRequest request)
+    {
+        System.out.println(request.toString());
+        return "error";
     }
 }

@@ -1,8 +1,16 @@
 package my.spring.shiro.demo.model;
 
 public class Perm {
+    @Override
+    public String toString() {
+        return "Perm{" +
+                "id=" + id +
+                ", perm='" + perm + '\'' +
+                '}';
+    }
+
     private int id;
-    private String prem;
+    private String perm;
 
     public int getId() {
         return id;
@@ -12,12 +20,12 @@ public class Perm {
         this.id = id;
     }
 
-    public void setPrem(String prem) {
-        this.prem = prem;
+    public void setperm(String perm) {
+        this.perm = perm;
     }
 
-    public String getPrem() {
-        return prem;
+    public String getperm() {
+        return perm;
     }
     
 }
