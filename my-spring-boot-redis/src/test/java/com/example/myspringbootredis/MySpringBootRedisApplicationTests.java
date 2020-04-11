@@ -20,5 +20,22 @@ class MySpringBootRedisApplicationTests {
     void testRedisTemplate(){
         service.testRedisTemplate();
     }
+    @Test
+    void testRedisList(){
+        service.testRedisList();
+    }
+    @Test
+    void testRedisHash(){
+        service.testRedisHash();
+    }
+    @Test
+    void testRedisSet(){
+        service.testRedisSet();
+    }
+
+    @Test
+    void testRedisZSet(){
+        service.testRedisZSet();
+    }
 
 }

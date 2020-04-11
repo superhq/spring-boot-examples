@@ -1,10 +1,10 @@
 package com.example.myspringbootredis.com.example.myspringbootredis.services;
 
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.data.redis.core.*;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
+
+import java.util.concurrent.TimeUnit;
 
 /*
 StringRedisTemplate 是 RedisTemplate 的子类，
@@ -25,7 +25,7 @@ public class MyRedisService {
 
     public void testStringRedisTemplate(){
         ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
-        ops.set("Hello","World");
+        ops.set("Hello","World",10, TimeUnit.SECONDS);
         System.out.println(ops.get("Hello"));
     }
     public void testRedisTemplate(){
@@ -35,5 +35,32 @@ public class MyRedisService {
         ValueOperations ops = redisTemplate.opsForValue();
         ops.set("Hello","World");
         System.out.println(ops.get("Hello"));
+    }
+    public void testRedisList(){
+        ListOperations ops = redisTemplate.opsForList();
+        ops.rightPush("list","a");// a
+        ops.leftPush("list","b");//b,a
+        System.out.println(ops.rightPop("list")); //a
+        System.out.println(ops.leftPop("list"));//b
+    }
+    public void testRedisHash(){
+        HashOperations ops = redisTemplate.opsForHash();
+        ops.put("hash","id","123");
+        ops.put("hash","name","jhon");
+        System.out.println(ops.get("hash","name"));
+    }
+
+    public void testRedisSet(){
+        SetOperations ops = redisTemplate.opsForSet();
+        ops.add("set","a","b","c","a","b");
+        System.out.println(ops.members("set"));
+    }
+
+    /*有序表*/
+    public void testRedisZSet(){
+        ZSetOperations ops = redisTemplate.opsForZSet();
+        ops.add("zset","a",2);
+        ops.add("zset","b",1);
+        System.out.println(ops.range("zset",0,-1));
     }
 }
