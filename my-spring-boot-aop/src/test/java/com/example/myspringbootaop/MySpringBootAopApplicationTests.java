@@ -36,4 +36,9 @@ class MySpringBootAopApplicationTests {
         webController.testWebLog3();
     }
 
+    @Test
+    void testWebLog4() throws Exception {
+        webController.testWebLog4();
+    }
+
 }

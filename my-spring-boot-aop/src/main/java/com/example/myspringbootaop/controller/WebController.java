@@ -19,4 +19,9 @@ public class WebController {
     public void testWebLog3() throws InterruptedException {
         System.out.println("调用:testWebLog3()");
     }
+
+    @ControllerWebLog(name="发生了异常",intoDb = true)
+    public void testWebLog4() throws Exception {
+        throw new Exception("这里发生了异常");
+    }
 }
