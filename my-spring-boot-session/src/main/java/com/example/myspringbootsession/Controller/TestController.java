@@ -9,23 +9,18 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Base64;
 
 @RestController
 @RequestMapping("/")
 public class TestController {
     @GetMapping("/test")
-    public String test(HttpSession session, HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("session id" + session.getId());
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie i : cookies) {
-                System.out.println("name :" + i.getName() + " value:" + i.getValue());
+    public String test(HttpServletRequest request,HttpServletResponse response) {
 
-            }
-        }
-        Cookie cookie = new Cookie("test", "test-value");
-        cookie.setMaxAge(10);
-        response.addCookie(cookie);
+        HttpSession session = request.getSession();
+        System.out.println("session id:" + session.getId());
+        System.out.println("session is new:" + session.isNew());
+
         return "Session Test";
     }
 }
