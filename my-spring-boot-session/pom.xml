@@ -23,26 +23,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <groupId>org.springframework.boot</groupId>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <artifactId>spring-boot-starter-data-redis</artifactId>&ndash;&gt;-->
-        <!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
-        <!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <groupId>org.springframework.session</groupId>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <artifactId>spring-session-core</artifactId>&ndash;&gt;-->
-        <!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.session</groupId>-->
-        <!--            <artifactId>spring-session-core</artifactId>-->
-        <!--        </dependency>-->
-        <!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <groupId>io.lettuce</groupId>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <artifactId>lettuce-core</artifactId>&ndash;&gt;-->
-        <!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.session</groupId>-->
-        <!--            <artifactId>spring-session-data-redis</artifactId>-->
-        <!--        </dependency>-->
+
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-data-redis</artifactId>
@@ -51,11 +32,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>io.lettuce</groupId>-->
-        <!--            <artifactId>lettuce-core</artifactId>-->
-        <!--            <version>5.2.2.RELEASE</version>-->
-        <!--        </dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

@@ -5,14 +5,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/")
-public class TestController {
-    @DistributeLock(key = "test", timeout = 30, timeUnit = TimeUnit.SECONDS)
-    @GetMapping("/test")
-    public String test() throws InterruptedException {
-        return "test";
+public class SmsController {
+    @DistributeLock(key = "SEND-SMS", timeout = 30, timeUnit = TimeUnit.SECONDS)
+    @GetMapping("/sendSMS")
+    public String sendSMS(HttpServletRequest request){
+        return "send sms";
     }
 }

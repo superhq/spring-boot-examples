@@ -24,6 +24,7 @@ public class DistributeLockService {
     public String getLock(String key, long timeout, TimeUnit timeUnit) {
         try {
             String value = UUID.randomUUID().toString();
+            //如果key不存在，则设置成功
             Boolean lockStat = stringRedisTemplate.execute((RedisCallback<Boolean>) connection ->
                     connection.set(key.getBytes(Charset.forName("UTF-8")), value.getBytes(Charset.forName("UTF-8")),
                             Expiration.from(timeout, timeUnit), RedisStringCommands.SetOption.SET_IF_ABSENT));

@@ -9,6 +9,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.concurrent.TimeUnit;
 
 /*分布式锁*/
@@ -23,12 +25,23 @@ public class DistributeLockAspect {
     }
 
     @Around(value = "@annotation(distributeLock)")
-    public Object doAround(ProceedingJoinPoint joinPoint, DistributeLock distributeLock) throws InterruptedException {
-        System.out.println("distribute lock key:" + distributeLock.key());
-        String value = distributeLockService.getLock(distributeLock.key(), distributeLock.timeout(), distributeLock.timeUnit());
-        //String value = distributeLockService.getLock("test", 30, TimeUnit.SECONDS);
+    public Object doAround(ProceedingJoinPoint joinPoint, DistributeLock distributeLock) throws Exception {
+        Object[] args = joinPoint.getArgs();
+        HttpSession session = null;
+        for (Object obj : args) {
+            if(obj instanceof HttpServletRequest){
+                session = ((HttpServletRequest) obj).getSession();
+                break;
+            }
+        }
+        if(session == null){
+            throw new Exception("no HttpServletRequest argument in method:" + joinPoint.getSignature() + "  Stop!");
+        }
+        String key = String.format("%s-%s",distributeLock.key(),session.getId());
+        String value = distributeLockService.getLock(key, distributeLock.timeout(), distributeLock.timeUnit());
+
         if (StringUtil.isNullOrEmpty(value)) {
-            return "请稍等";
+            return "please wait a moment...";
         }
         try {
             Object obj = joinPoint.proceed();
@@ -36,11 +49,10 @@ public class DistributeLockAspect {
 
         } catch (Throwable throwable) {
             throwable.printStackTrace();
-            return "系统异常";
+            return "System error";
         } finally {
-            distributeLockService.unLock(distributeLock.key(), value);
+            //这里不可以释放分布式锁。我们在等分布式锁超时后自动解锁，才能达到限制短信发送频率的作用。
+            //distributeLockService.unLock(distributeLock.key(), value);
         }
-
-
     }
 }
