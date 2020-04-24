@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @Value("${spring.application.name}")
     private String serverName;
+    @Value("${server.port}")
+    private int port;
 
     @GetMapping("/")
     public String test() {
-        return this.serverName;
+        return this.serverName + " :" + this.port;
     }
 }
