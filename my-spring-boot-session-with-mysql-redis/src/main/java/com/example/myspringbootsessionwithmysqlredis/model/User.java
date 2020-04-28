@@ -16,7 +16,6 @@ import javax.validation.constraints.NotBlank;
 @Table(name="user")
 @Getter
 @Setter
-
 public class User {
     @Id
     @GenericGenerator(name = "idGenerator",strategy = "uuid")

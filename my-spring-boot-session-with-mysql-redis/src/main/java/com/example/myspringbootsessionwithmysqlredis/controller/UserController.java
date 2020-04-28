@@ -6,6 +6,7 @@ import com.example.myspringbootsessionwithmysqlredis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @RestController
@@ -29,10 +30,13 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public BaseResponse login(String account, String password, HttpSession session){
+    public BaseResponse login(String account, String password, HttpSession session, HttpServletResponse httpServletResponse){
         BaseResponse response = userService.login(account, password);
         if(response.getCode() == 0){
 //            session.setAttribute(session.getId(),response.getMessage());
+        }
+        else{
+            session.invalidate();
         }
         return response;
     }

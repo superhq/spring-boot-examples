@@ -25,15 +25,15 @@ public class SessionConfig implements WebMvcConfigurer {
 }
 
 @Configuration
-class SecurityInterceptor implements HandlerInterceptor{
+class SecurityInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession session = request.getSession();
-        if(session.isNew()){
+        if (session.isNew()) {
             session.invalidate();
-            response.getWriter().write(JSON.toJSONString(new BaseResponse(-1,"please login first")));
-        }else{
+            response.getWriter().write(JSON.toJSONString(new BaseResponse(-1, "please login first")));
+        } else {
             return true;
         }
         return false;
