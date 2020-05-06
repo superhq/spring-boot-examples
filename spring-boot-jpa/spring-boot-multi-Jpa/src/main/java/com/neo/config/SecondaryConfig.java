@@ -36,7 +36,7 @@ public class SecondaryConfig {
         return builder
                 .dataSource(secondaryDataSource)
                 .properties(vendorProperties)
-                .packages("com.neo.model")
+                .packages("com.neo.com.oldalexspringcloudlogin.model")
                 .persistenceUnit("secondaryPersistenceUnit")
                 .build();
     }

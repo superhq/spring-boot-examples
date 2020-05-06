@@ -36,7 +36,7 @@ public class UserController {
     @RequiresRoles({"admin"})
     public String add(HttpServletRequest request,Model model) {
           System.out.println(request.getAttributeNames());
-//        model.addAttribute("msg",)
+//        com.oldalexspringcloudlogin.model.addAttribute("msg",)
         return "add";
     }
 

@@ -39,7 +39,7 @@ public class PrimaryConfig {
         return builder
                 .dataSource(primaryDataSource)
                 .properties(vendorProperties)
-                .packages("com.neo.model") //设置实体类所在位置
+                .packages("com.neo.com.oldalexspringcloudlogin.model") //设置实体类所在位置
                 .persistenceUnit("primaryPersistenceUnit")
                 .build();
     }
