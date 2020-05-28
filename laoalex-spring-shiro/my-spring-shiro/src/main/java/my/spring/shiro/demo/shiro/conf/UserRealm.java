@@ -40,7 +40,7 @@ public class UserRealm extends AuthorizingRealm {
         User user = userMapper.getUserByName(token.getUsername());
         if(user != null) {
 
-            SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(user, user.getPassword(), "");
+            SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(user, token.getCredentials(), "");
 
 
             return simpleAuthenticationInfo;
