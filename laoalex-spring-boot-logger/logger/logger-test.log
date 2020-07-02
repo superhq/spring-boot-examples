@@ -1,0 +1,16 @@
+2020-07-02 17:14:45.135 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 15052 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-02 17:14:45.144 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-02 17:14:48.525 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-02 17:14:48.978 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 4.762 seconds (JVM running for 6.741)
+2020-07-02 17:14:49.370 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - this is a info message
+2020-07-02 17:14:49.370 [main] WARN  c.l.l.LaoalexSpringBootLoggerApplicationTests - this is a warn message
+2020-07-02 17:14:49.370 [main] ERROR c.l.l.LaoalexSpringBootLoggerApplicationTests - this is a error message
+2020-07-02 17:14:49.393 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-02 17:15:40.437 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 7812 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-02 17:15:40.439 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-02 17:15:43.891 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-02 17:15:44.279 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 4.658 seconds (JVM running for 6.651)
+2020-07-02 17:15:44.667 [main] INFO  test - this is a info message
+2020-07-02 17:15:44.667 [main] WARN  test - this is a warn message
+2020-07-02 17:15:44.667 [main] ERROR test - this is a error message
+2020-07-02 17:15:44.687 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

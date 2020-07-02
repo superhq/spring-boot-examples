@@ -1,7 +1,8 @@
 <configuration>
     <!-- 属性文件:在properties文件中找到对应的配置项 -->
     <springProperty scope="context" name="logging.file.path"  source="logging.file.path"/>
-<!--    <springProperty scope="contextontext" name="logging.level" source="logging.level.com.laoalex.laoalexspringbootlogger"/>-->
+    <springProperty scope="contextontext" name="logging.level" source="logging.level"/>
+    <springProperty scope="contextontext" name="logging.file.name" source="logging.file.name"/>
     <!-- 默认的控制台日志输出，一般生产环境都是后台启动，这个没太大作用 -->
     <appender name="STDOUT"
               class="ch.qos.logback.core.ConsoleAppender">
@@ -17,7 +18,7 @@
             <level>${logging.level}</level>
         </filter>
         <file>
-            ${logging.file.path}/glmapper-loggerone.log
+            ${logging.file.path}/${logging.file.name}.log
         </file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>${logging.file.path}/glmapper-loggerone.log.%d{yyyy-MM-dd}</FileNamePattern>

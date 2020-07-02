@@ -1,1 +1,4 @@
-https://www.cnblogs.com/jianliang-Wu/p/8945343.html
+https://juejin.im/post/5def02896fb9a01662435b03
+
+日志加载顺序：logback.xml -> application.properties -> logback-spring.xml
+
