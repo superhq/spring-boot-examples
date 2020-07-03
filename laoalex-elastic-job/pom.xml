@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.0.RELEASE</version>
+        <version>2.3.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.laoalex</groupId>
-    <artifactId>laoalex-spring-boot-logger</artifactId>
+    <artifactId>laoalex-elastic-job</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>laoalex-spring-boot-logger</name>
+    <name>laoalex-elastic-job</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -19,18 +19,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.4</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.58</version>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

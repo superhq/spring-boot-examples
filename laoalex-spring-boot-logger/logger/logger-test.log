@@ -1,16 +1,69 @@
-2020-07-02 17:14:45.135 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 15052 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
-2020-07-02 17:14:45.144 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
-2020-07-02 17:14:48.525 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-07-02 17:14:48.978 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 4.762 seconds (JVM running for 6.741)
-2020-07-02 17:14:49.370 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - this is a info message
-2020-07-02 17:14:49.370 [main] WARN  c.l.l.LaoalexSpringBootLoggerApplicationTests - this is a warn message
-2020-07-02 17:14:49.370 [main] ERROR c.l.l.LaoalexSpringBootLoggerApplicationTests - this is a error message
-2020-07-02 17:14:49.393 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-2020-07-02 17:15:40.437 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 7812 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
-2020-07-02 17:15:40.439 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
-2020-07-02 17:15:43.891 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-07-02 17:15:44.279 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 4.658 seconds (JVM running for 6.651)
-2020-07-02 17:15:44.667 [main] INFO  test - this is a info message
-2020-07-02 17:15:44.667 [main] WARN  test - this is a warn message
-2020-07-02 17:15:44.667 [main] ERROR test - this is a error message
-2020-07-02 17:15:44.687 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-03 14:23:39.328 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 11864 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-03 14:23:39.340 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-03 14:23:42.293 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-03 14:23:42.757 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 5.378 seconds (JVM running for 8.254)
+2020-07-03 14:23:43.423 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - this is a info message
+2020-07-03 14:23:43.424 [main] WARN  c.l.l.LaoalexSpringBootLoggerApplicationTests - this is a warn message
+2020-07-03 14:23:43.424 [main] ERROR c.l.l.LaoalexSpringBootLoggerApplicationTests - this is a error message
+2020-07-03 14:23:43.465 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-03 14:42:24.362 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 7424 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-03 14:42:24.365 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-03 14:42:28.292 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-03 14:42:28.744 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 5.461 seconds (JVM running for 7.521)
+2020-07-03 14:42:29.098 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - this is a info message
+2020-07-03 14:42:29.098 [main] WARN  c.l.l.LaoalexSpringBootLoggerApplicationTests - this is a warn message
+2020-07-03 14:42:29.098 [main] ERROR c.l.l.LaoalexSpringBootLoggerApplicationTests - this is a error message
+2020-07-03 14:42:29.121 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-03 14:56:23.562 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 4320 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-03 14:56:23.770 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-03 14:56:27.478 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-03 14:56:27.941 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 5.333 seconds (JVM running for 7.329)
+2020-07-03 14:56:28.457 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-03 14:57:28.371 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 8448 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-03 14:57:28.373 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-03 14:57:31.948 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-03 14:57:32.533 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 5.021 seconds (JVM running for 7.03)
+2020-07-03 14:57:33.102 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - {"age":35,"name":"laoalex"}
+2020-07-03 14:57:33.124 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:07:55.992 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 8084 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-03 15:07:55.995 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-03 15:07:59.331 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:07:59.830 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 4.922 seconds (JVM running for 6.972)
+2020-07-03 15:08:00.484 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - {"age":35,"detail1":"this is a datail1","detail2":"this is a datail2","detail3":"this is a datail3","detail4":"this is a datail4","detail5":"this is a datail5","name":"laoalex"}
+2020-07-03 15:08:00.522 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:08:42.910 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 11636 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-03 15:08:42.912 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-03 15:08:46.748 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:08:47.169 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 5.123 seconds (JVM running for 7.088)
+2020-07-03 15:08:47.694 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - {"age":35,"detail1":"this is a datail1","detail2":"this is a datail2","detail3":"this is a datail3","detail4":"this is \na datail4","detail5":"this is a datail5","name":"laoalex"}
+2020-07-03 15:08:47.722 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:10:01.446 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 8252 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-03 15:10:01.447 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-03 15:10:05.433 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:10:06.044 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 5.857 seconds (JVM running for 7.888)
+2020-07-03 15:10:06.650 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - {"age":35,"detail1":"this is a datail1","detail2":"this is a datail2","detail3":"this is a datail3","detail4":"this is \na datail4","detail5":"this is a datail5","name":"laoalex"}
+2020-07-03 15:10:06.682 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:13:29.772 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 13620 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-03 15:13:29.775 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-03 15:13:33.349 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:13:33.760 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 4.938 seconds (JVM running for 6.87)
+2020-07-03 15:13:34.259 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - {"age":35,"detail1":"this is a datail1","detail2":"this is a datail2","detail3":"this is a datail3","detail4":"this is \na datail4","detail5":"this is a datail5","name":"laoalex"}
+2020-07-03 15:13:34.330 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:16:05.453 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 13720 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-03 15:16:05.455 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-03 15:16:09.085 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:16:09.607 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 5.586 seconds (JVM running for 7.993)
+2020-07-03 15:16:10.108 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - {"age":35,"detail1":"this is a datail1","detail2":"this is a datail2","detail3":"this is a datail3","detail4":"this is \na datail4","detail5":"this is a datail5","name":"laoalex"}
+2020-07-03 15:16:10.165 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:16:45.390 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 12856 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-03 15:16:45.392 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-03 15:16:49.350 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:16:49.861 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 5.235 seconds (JVM running for 7.63)
+2020-07-03 15:16:50.321 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - {"age":35,"detail1":"this is a datail1","detail2":"this is a datail2","detail3":"this is a datail3","detail4":"this is \na datail4","detail5":"this is a datail5","name":"laoalex"}
+2020-07-03 15:16:50.350 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:24:26.451 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Starting LaoalexSpringBootLoggerApplicationTests on DESKTOP-BGGFKUE with PID 15256 (started by hongq in C:\Users\hongq\IdeaProjects\spring-boot-examples\laoalex-spring-boot-logger)
+2020-07-03 15:24:26.453 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - No active profile set, falling back to default profiles: default
+2020-07-03 15:24:30.761 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-03 15:24:31.294 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - Started LaoalexSpringBootLoggerApplicationTests in 5.853 seconds (JVM running for 8.275)
+2020-07-03 15:24:31.851 [main] INFO  c.l.l.LaoalexSpringBootLoggerApplicationTests - {"age":11,"detail1":"this is a datail1","detail2":"this is a datail2","detail3":"this is a datail3","detail4":"this is \na datail4","detail5":"this is a datail5","name":"laoalex"}
+2020-07-03 15:24:31.886 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

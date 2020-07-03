@@ -21,7 +21,7 @@
             ${logging.file.path}/${logging.file.name}.log
         </file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${logging.file.path}/glmapper-loggerone.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <FileNamePattern>${logging.file.path}/${logging.file.name}.log.%d{yyyy-MM-dd}</FileNamePattern>
             <MaxHistory>30</MaxHistory>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
