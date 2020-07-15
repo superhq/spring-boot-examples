@@ -10,9 +10,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class WebApplicationTests {
 
-	@Test
-	public void contextLoads() {
-		System.out.println("hello web");
-	}
+    @Test
+    public void contextLoads() {
+        System.out.println("hello web");
+    }
 
 }

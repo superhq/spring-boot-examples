@@ -23,44 +23,47 @@ public class MyRedisService {
         this.redisTemplate = redisTemplate;
     }
 
-    public void testStringRedisTemplate(){
+    public void testStringRedisTemplate() {
         ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
-        ops.set("Hello","World",10, TimeUnit.SECONDS);
+        ops.set("Hello", "World", 10, TimeUnit.SECONDS);
         System.out.println(ops.get("Hello"));
     }
-    public void testRedisTemplate(){
+
+    public void testRedisTemplate() {
         /*如果指定了序列化方法，则redisTemplate跟stringRedisTemplate的效果一样*/
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setValueSerializer(new StringRedisSerializer());
         ValueOperations ops = redisTemplate.opsForValue();
-        ops.set("Hello","World");
+        ops.set("Hello", "World");
         System.out.println(ops.get("Hello"));
     }
-    public void testRedisList(){
+
+    public void testRedisList() {
         ListOperations ops = redisTemplate.opsForList();
-        ops.rightPush("list","a");// a
-        ops.leftPush("list","b");//b,a
+        ops.rightPush("list", "a");// a
+        ops.leftPush("list", "b");//b,a
         System.out.println(ops.rightPop("list")); //a
         System.out.println(ops.leftPop("list"));//b
     }
-    public void testRedisHash(){
+
+    public void testRedisHash() {
         HashOperations ops = redisTemplate.opsForHash();
-        ops.put("hash","id","123");
-        ops.put("hash","name","jhon");
-        System.out.println(ops.get("hash","name"));
+        ops.put("hash", "id", "123");
+        ops.put("hash", "name", "jhon");
+        System.out.println(ops.get("hash", "name"));
     }
 
-    public void testRedisSet(){
+    public void testRedisSet() {
         SetOperations ops = redisTemplate.opsForSet();
-        ops.add("set","a","b","c","a","b");
+        ops.add("set", "a", "b", "c", "a", "b");
         System.out.println(ops.members("set"));
     }
 
     /*有序表*/
-    public void testRedisZSet(){
+    public void testRedisZSet() {
         ZSetOperations ops = redisTemplate.opsForZSet();
-        ops.add("zset","a",2);
-        ops.add("zset","b",1);
-        System.out.println(ops.range("zset",0,-1));
+        ops.add("zset", "a", 2);
+        ops.add("zset", "b", 1);
+        System.out.println(ops.range("zset", 0, -1));
     }
 }

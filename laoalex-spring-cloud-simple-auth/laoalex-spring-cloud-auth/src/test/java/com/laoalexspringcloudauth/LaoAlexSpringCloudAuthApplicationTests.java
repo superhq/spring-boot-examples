@@ -10,15 +10,18 @@ class OldalexSpringCloudLoginApplicationTests {
 
     @Autowired
     private UserService userService;
+
     @Test
     void contextLoads() {
     }
+
     @Test
-    void getAll(){
+    void getAll() {
         System.out.println(userService.getAll());
     }
+
     @Test
-    void getPassword(){
+    void getPassword() {
         System.out.println(userService.getPassword("alex"));
     }
 

@@ -43,8 +43,7 @@ public class HelloControlerTests {
                 .andDo(MockMvcResultHandlers.print())
                 .andReturn();
     }
-    
-    
+
 
     @Test
     public void testHello() throws Exception {

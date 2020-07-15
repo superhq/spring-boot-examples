@@ -10,5 +10,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface ControllerWebLog {
     String name();
+
     boolean intoDb() default false;
 }

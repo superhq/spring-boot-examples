@@ -15,14 +15,16 @@ import java.util.List;
 public class RoleMapperTest {
     @Autowired
     private RoleMapper roleMapper;
+
     @Test
-    public void getRoleById(){
+    public void getRoleById() {
         Role role = roleMapper.getRoleById(0);
         System.out.println(role.getName());
         System.out.println(role.getPerms());
     }
+
     @Test
-    public void getRolesByUserId(){
+    public void getRolesByUserId() {
         List<Role> roles = roleMapper.getRolesByUserId(1);
         System.out.println(roles);
     }

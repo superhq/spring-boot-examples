@@ -10,9 +10,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class DockerApplicationTests {
 
-	@Test
-	public void contextLoads() {
-		System.out.println("hello docker");
-	}
+    @Test
+    public void contextLoads() {
+        System.out.println("hello docker");
+    }
 
 }

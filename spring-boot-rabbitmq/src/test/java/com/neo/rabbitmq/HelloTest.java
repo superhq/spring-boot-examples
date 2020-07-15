@@ -11,13 +11,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class HelloTest {
 
-	@Autowired
-	private HelloSender helloSender;
+    @Autowired
+    private HelloSender helloSender;
 
-	@Test
-	public void hello() throws Exception {
-		helloSender.send();
-	}
+    @Test
+    public void hello() throws Exception {
+        helloSender.send();
+    }
 
 
 }

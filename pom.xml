@@ -9,9 +9,9 @@
     <packaging>pom</packaging>
     <version>2.0.0</version>
 
-<!--    <properties>-->
-<!--        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>-->
-<!--    </properties>-->
+    <!--    <properties>-->
+    <!--        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>-->
+    <!--    </properties>-->
 
     <modules>
         <module>spring-boot-actuator</module>
@@ -47,17 +47,17 @@
         <module>spring-boot-webflux</module>
         <module>my-security</module>
     </modules>
-<!--    <dependencyManagement>-->
-<!--        <dependencies>-->
-<!--            <dependency>-->
-<!--                <groupId>org.springframework.cloud</groupId>-->
-<!--                <artifactId>spring-cloud-dependencies</artifactId>-->
-<!--                <version>${spring-cloud.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
-<!--        </dependencies>-->
-<!--    </dependencyManagement>-->
+    <!--    <dependencyManagement>-->
+    <!--        <dependencies>-->
+    <!--            <dependency>-->
+    <!--                <groupId>org.springframework.cloud</groupId>-->
+    <!--                <artifactId>spring-cloud-dependencies</artifactId>-->
+    <!--                <version>${spring-cloud.version}</version>-->
+    <!--                <type>pom</type>-->
+    <!--                <scope>import</scope>-->
+    <!--            </dependency>-->
+    <!--        </dependencies>-->
+    <!--    </dependencyManagement>-->
     <build>
         <plugins>
             <plugin>

@@ -15,7 +15,7 @@ import java.util.Base64;
 @RequestMapping("/")
 public class TestController {
     @GetMapping("/test")
-    public String test(HttpServletRequest request,HttpServletResponse response) {
+    public String test(HttpServletRequest request, HttpServletResponse response) {
 
         HttpSession session = request.getSession();
         System.out.println("session id:" + session.getId());

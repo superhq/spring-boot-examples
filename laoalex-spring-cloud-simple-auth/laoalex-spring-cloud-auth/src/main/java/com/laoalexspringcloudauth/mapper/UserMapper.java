@@ -13,6 +13,7 @@ import java.util.List;
 public interface UserMapper {
     @Select("select * from user")
     List<User> getAll();
+
     @Select("select password from user where name=#{name}")
     String getPassword(String name);
 }

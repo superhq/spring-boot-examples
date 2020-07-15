@@ -1,37 +1,37 @@
 version: '3.1'
 
 services:
-    redis:
-        image: redis
-        container_name: myredis
-        restart: always
-        command: redis-server /usr/local/etc/redis/redis.conf
-        volumes:
-            - E:/docker/redis/data:/data
-            - E:/docker/redis/redis.conf:/usr/local/etc/redis/redis.conf
-        ports:
-            - 6379:6379      
-    mongo:
-        image: mongo
-        container_name: mymongo
-        restart: always
-        volumes:
-            - mongodata:/data/db
-        
-        ports:
-            - 27017:27017
-            
-    mariadb:
-        image: mariadb
-        container_name: mymariadb
-        restart: always
-        volumes:
-            - E:/docker/mariadb:/var/lib/mysql
-        environment:
-            MYSQL_ROOT_PASSWORD: 123456
-        ports:
-            - 3306:3306
-        
+  redis:
+    image: redis
+    container_name: myredis
+    restart: always
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - E:/docker/redis/data:/data
+      - E:/docker/redis/redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - 6379:6379
+  mongo:
+    image: mongo
+    container_name: mymongo
+    restart: always
+    volumes:
+      - mongodata:/data/db
+
+    ports:
+      - 27017:27017
+
+  mariadb:
+    image: mariadb
+    container_name: mymariadb
+    restart: always
+    volumes:
+      - E:/docker/mariadb:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - 3306:3306
+
 volumes:
-    mongodata:
+  mongodata:
         

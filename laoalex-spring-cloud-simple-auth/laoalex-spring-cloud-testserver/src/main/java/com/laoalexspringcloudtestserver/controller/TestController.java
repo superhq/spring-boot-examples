@@ -17,8 +17,7 @@ public class TestController {
     private int port;
 
     @GetMapping("/")
-    public String test(HttpServletResponse response)
-    {
+    public String test(HttpServletResponse response) {
         Cookie cookie = new Cookie("TestServer", "I-am-a-TestServer");
         response.addCookie(cookie);
         return this.serverName + " :" + this.port;

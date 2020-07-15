@@ -17,14 +17,15 @@ public class PermMapperTest {
     private PermMapper permMapper;
 
     @Test
-    public void getPermById(){
+    public void getPermById() {
         Perm perm = permMapper.getPermById(0);
         System.out.println(perm);
     }
+
     @Test
-    public void getPermsByRoleId(){
+    public void getPermsByRoleId() {
         List<Perm> perms = permMapper.getPermsByRoleId(0);
-        for (Perm perm:perms){
+        for (Perm perm : perms) {
             System.out.println(perm);
         }
     }

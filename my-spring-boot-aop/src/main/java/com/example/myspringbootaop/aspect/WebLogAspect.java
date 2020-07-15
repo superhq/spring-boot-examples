@@ -11,11 +11,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class WebLogAspect {
     @Pointcut("execution(* com.example.myspringbootaop.controller..*.*(..))")//切点
-    public void webLog(){
+    public void webLog() {
     }
+
     //通知，增强处理
     @Before(value = "webLog() && @annotation(controllerWebLog)")
-    public void doBefore(JoinPoint joinPoint, ControllerWebLog controllerWebLog){
+    public void doBefore(JoinPoint joinPoint, ControllerWebLog controllerWebLog) {
         System.out.println("@Before通知开始");
         System.out.println("开始调用 " + joinPoint.getSignature());
         System.out.println("注解的名称：" + controllerWebLog.name());
@@ -30,12 +31,13 @@ public class WebLogAspect {
         long start = System.currentTimeMillis();
         Object object = joinPoint.proceed();
         long end = System.currentTimeMillis();
-        System.out.println(joinPoint.getSignature() + "运行时长为:" + (end-start) + " ms");
+        System.out.println(joinPoint.getSignature() + "运行时长为:" + (end - start) + " ms");
         System.out.println("@Around通知结束");
         return object;
     }
-    @AfterThrowing(value = "webLog() && @annotation(controllerWebLog)",throwing = "throwable")
-    public void doAfterThrowing(JoinPoint joinPoint,ControllerWebLog controllerWebLog,Throwable throwable){
+
+    @AfterThrowing(value = "webLog() && @annotation(controllerWebLog)", throwing = "throwable")
+    public void doAfterThrowing(JoinPoint joinPoint, ControllerWebLog controllerWebLog, Throwable throwable) {
         System.out.println("@AfterThrowing通知开始");
         System.out.println(joinPoint.getSignature() + " 运行出错");
         System.out.println("错误消息为:" + throwable.getMessage());

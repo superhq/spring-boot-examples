@@ -17,20 +17,19 @@ public class UserService {
         this.userMapper = userMapper;
     }
 
-    public List<User> getAll(){
+    public List<User> getAll() {
         return userMapper.getAll();
     }
 
-    public String getPassword(String name){
+    public String getPassword(String name) {
         return userMapper.getPassword(name);
     }
 
-    public boolean checkPassword(String name, String password){
+    public boolean checkPassword(String name, String password) {
         String userPassword = getPassword(name);
-        if(userPassword.equals(password)){
+        if (userPassword.equals(password)) {
             return true;
-        }else
-        {
+        } else {
             return false;
         }
     }

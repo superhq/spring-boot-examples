@@ -11,7 +11,7 @@ import lombok.ToString;
 @Getter
 @NoArgsConstructor
 @ToString
-@ApiModel(value = "User",description = "用户实体")
+@ApiModel(value = "User", description = "用户实体")
 public class User {
     @ApiModelProperty("用户ID")
     private String id;

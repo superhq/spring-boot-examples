@@ -10,9 +10,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class ComposeApplicationTests {
 
-	@Test
-	public void contextLoads() {
-		System.out.println("Hello Spring Boot Docker Compose!");
-	}
+    @Test
+    public void contextLoads() {
+        System.out.println("Hello Spring Boot Docker Compose!");
+    }
 
 }

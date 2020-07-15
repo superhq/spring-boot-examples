@@ -17,19 +17,19 @@ public class UserMapperTest {
     private UserMapper userMapper;
 
     @Test
-    public void getAllUsers(){
+    public void getAllUsers() {
         List<User> users = userMapper.getAllUser();
         System.out.println(users);
     }
 
     @Test
-    public void getUserById(){
+    public void getUserById() {
         User user = userMapper.getUserById(1);
         System.out.println(user);
     }
 
     @Test
-    public void getUserByName(){
+    public void getUserByName() {
         User user = userMapper.getUserByName("hongqun");
         System.out.println(user);
     }

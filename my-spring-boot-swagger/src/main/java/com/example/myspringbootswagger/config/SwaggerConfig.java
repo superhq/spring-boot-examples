@@ -44,7 +44,7 @@ public class SwaggerConfig {
                                         .message("资源不可用")
                                         .responseModel(new ModelRef("Error"))
                                         .build()
-                                ));
+                        ));
     }
 
     private ApiInfo apiInfo() {

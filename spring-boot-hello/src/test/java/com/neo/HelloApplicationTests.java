@@ -10,9 +10,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class HelloApplicationTests {
 
-	@Test
-	public void contextLoads() {
-		System.out.println("Hello Spring Boot 2.0!");
-	}
+    @Test
+    public void contextLoads() {
+        System.out.println("Hello Spring Boot 2.0!");
+    }
 
 }

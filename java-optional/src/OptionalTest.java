@@ -13,10 +13,11 @@ public class OptionalTest {
     }
 }
 
-class Persion{
+class Persion {
     private String name;
     private String email;
-    public Persion(String name,String email){
+
+    public Persion(String name, String email) {
         this.name = name;
         this.email = email;
     }
@@ -30,10 +31,11 @@ class Persion{
     }
 }
 
-class Persion1{
+class Persion1 {
     private String name;
     private String email;
-    public Persion1(String name,String email){
+
+    public Persion1(String name, String email) {
         this.name = name;
         this.email = email;
     }
@@ -47,10 +49,11 @@ class Persion1{
     }
 }
 
-class Persion2{
+class Persion2 {
     private String name;
     private String email;
-    public Persion2(String name,String email){
+
+    public Persion2(String name, String email) {
         this.name = name;
         this.email = email;
     }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api")
 public class ApiController {
     @RequestMapping("test")
-    public String test(){
+    public String test() {
         return "Hello World";
     }
 }

@@ -12,13 +12,16 @@ class SpringBootKafkaApplicationTests {
     private KafkaTemplate<String, String> kafkaTemplate;
     @Autowired
     private KafkaComsumer comsumer;
+
     @Test
     void contextLoads() {
     }
+
     @Test
-    void sendMsg(){
-        kafkaTemplate.send("test001","mytest");
+    void sendMsg() {
+        kafkaTemplate.send("test001", "mytest");
     }
+
     @Test
     void recvMsg() throws InterruptedException {
         Thread thread = new Thread(comsumer);

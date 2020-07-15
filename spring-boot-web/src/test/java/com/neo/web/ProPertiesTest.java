@@ -16,20 +16,20 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class ProPertiesTest {
 
-	@Autowired
+    @Autowired
     private NeoProperties neoProperties;
 
     @Test
     public void getHello() throws Exception {
-    	System.out.println(neoProperties.getTitle());
+        System.out.println(neoProperties.getTitle());
         Assert.assertEquals(neoProperties.getTitle(), "纯洁的微笑");
         Assert.assertEquals(neoProperties.getDescription(), "分享生活和技术");
     }
 
     @Test
     public void testMap() throws Exception {
-    	Map<String, Long> orderMinTime=new HashMap<String, Long>();
-    	long xx=orderMinTime.get("123");
+        Map<String, Long> orderMinTime = new HashMap<String, Long>();
+        long xx = orderMinTime.get("123");
     }
 
 }

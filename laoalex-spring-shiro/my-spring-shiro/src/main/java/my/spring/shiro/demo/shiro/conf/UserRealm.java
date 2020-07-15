@@ -17,16 +17,17 @@ import java.util.List;
 public class UserRealm extends AuthorizingRealm {
     @Autowired
     private UserMapper userMapper;
+
     //授权逻辑
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         User user = (User) principalCollection.getPrimaryPrincipal();
         List<Role> roles = user.getRoles();
-        for(Role role:roles){
+        for (Role role : roles) {
             authorizationInfo.addRole(role.getName());
             List<Perm> perms = role.getPerms();
-            for(Perm perm:perms){
+            for (Perm perm : perms) {
                 authorizationInfo.addStringPermission(perm.getperm());
             }
         }
@@ -36,9 +37,9 @@ public class UserRealm extends AuthorizingRealm {
     //认证逻辑
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        UsernamePasswordToken token = (UsernamePasswordToken)authenticationToken;
+        UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
         User user = userMapper.getUserByName(token.getUsername());
-        if(user != null) {
+        if (user != null) {
 
             SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(user, token.getCredentials(), "");
 

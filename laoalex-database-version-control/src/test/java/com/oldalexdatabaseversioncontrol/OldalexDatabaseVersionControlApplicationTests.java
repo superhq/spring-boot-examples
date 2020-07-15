@@ -11,13 +11,14 @@ class OldalexDatabaseVersionControlApplicationTests {
 
     @Autowired
     private UserController userController;
+
     @Test
     void contextLoads() {
     }
 
     @Test
-    void getAll(){
-        System.out.println( userController.getAll());
+    void getAll() {
+        System.out.println(userController.getAll());
     }
 
 }

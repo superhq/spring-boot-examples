@@ -17,35 +17,35 @@ public class UserController {
     @Autowired
     private User1Mapper user1Mapper;
 
-	@Autowired
-	private User2Mapper user2Mapper;
-	
-	@RequestMapping("/getUsers")
-	public List<User> getUsers() {
-		List<User> users=user1Mapper.getAll();
-		return users;
-	}
-	
+    @Autowired
+    private User2Mapper user2Mapper;
+
+    @RequestMapping("/getUsers")
+    public List<User> getUsers() {
+        List<User> users = user1Mapper.getAll();
+        return users;
+    }
+
     @RequestMapping("/getUser")
     public User getUser(Long id) {
-    	User user=user2Mapper.getOne(id);
+        User user = user2Mapper.getOne(id);
         return user;
     }
-    
+
     @RequestMapping("/add")
     public void save(User user) {
         user2Mapper.insert(user);
     }
-    
-    @RequestMapping(value="update")
+
+    @RequestMapping(value = "update")
     public void update(User user) {
         user2Mapper.update(user);
     }
-    
-    @RequestMapping(value="/delete/{id}")
+
+    @RequestMapping(value = "/delete/{id}")
     public void delete(@PathVariable("id") Long id) {
         user1Mapper.delete(id);
     }
-    
-    
+
+
 }

@@ -18,7 +18,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @Configuration
 @EnableConfigurationProperties(MultipleMongoProperties.class)
 @EnableMongoRepositories(basePackages = "com.neo.repository.secondary",
-		mongoTemplateRef = "secondaryMongoTemplate")
+        mongoTemplateRef = "secondaryMongoTemplate")
 public class SecondaryMongoConfig {
 
 }

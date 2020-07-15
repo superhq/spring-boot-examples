@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_TYPE;
 
 
-
 @Configuration
 public class ApiFilterConfig extends ZuulFilter {
 
@@ -36,7 +35,6 @@ public class ApiFilterConfig extends ZuulFilter {
 
         return true;
     }
-
 
 
     @Override

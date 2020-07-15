@@ -19,9 +19,9 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody User user, HttpSession session){
-        if(userService.checkPassword(user.getName(),user.getPassword())){
-            if(session.isNew())
+    public String login(@RequestBody User user, HttpSession session) {
+        if (userService.checkPassword(user.getName(), user.getPassword())) {
+            if (session.isNew())
                 return "login success";
             else
                 return "login already";
@@ -31,11 +31,11 @@ public class LoginController {
     }
 
     @GetMapping("/logout")
-    public String logout(HttpSession session){
-        if(session.isNew()){
+    public String logout(HttpSession session) {
+        if (session.isNew()) {
             session.invalidate();
             return "didn't login";
-        }else{
+        } else {
             session.invalidate();
             return "logout success";
         }

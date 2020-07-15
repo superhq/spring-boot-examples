@@ -27,5 +27,5 @@ public class Perm {
     public String getperm() {
         return perm;
     }
-    
+
 }

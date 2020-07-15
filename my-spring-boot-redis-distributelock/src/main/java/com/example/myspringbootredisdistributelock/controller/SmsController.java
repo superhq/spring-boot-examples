@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class SmsController {
     @DistributeLock(key = "SEND-SMS", timeout = 30, timeUnit = TimeUnit.SECONDS)
     @GetMapping("/sendSMS")
-    public String sendSMS(HttpServletRequest request){
+    public String sendSMS(HttpServletRequest request) {
         return "send sms";
     }
 }

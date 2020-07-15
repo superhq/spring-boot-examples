@@ -16,10 +16,12 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class MySecurityConf extends WebSecurityConfigurerAdapter {
     private PasswordEncoder passwordEncoder;
+
     @Autowired
-    public MySecurityConf(PasswordEncoder passwordEncoder){
+    public MySecurityConf(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
     }
+
     @Override
     @Bean
     protected UserDetailsService userDetailsService() {
@@ -35,7 +37,7 @@ public class MySecurityConf extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/","/index.html")
+                .antMatchers("/", "/index.html")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

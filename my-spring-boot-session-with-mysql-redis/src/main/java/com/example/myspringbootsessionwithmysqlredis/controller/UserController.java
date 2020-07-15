@@ -20,29 +20,28 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public User save(@RequestBody  User user){
+    public User save(@RequestBody User user) {
         return userService.saveUser(user);
     }
 
     @GetMapping("/find/{account}")
-    public User find(@PathVariable String account){
+    public User find(@PathVariable String account) {
         return userService.findByAccount(account);
     }
 
     @PostMapping("/login")
-    public BaseResponse login(String account, String password, HttpSession session, HttpServletResponse httpServletResponse){
+    public BaseResponse login(String account, String password, HttpSession session, HttpServletResponse httpServletResponse) {
         BaseResponse response = userService.login(account, password);
-        if(response.getCode() == 0){
+        if (response.getCode() == 0) {
 //            session.setAttribute(session.getId(),response.getMessage());
-        }
-        else{
+        } else {
             session.invalidate();
         }
         return response;
     }
 
     @RequestMapping("/logout")
-    public String logout(HttpSession session){
+    public String logout(HttpSession session) {
         session.invalidate();
         return "logout success";
     }

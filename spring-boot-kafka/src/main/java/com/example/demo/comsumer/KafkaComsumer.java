@@ -6,10 +6,10 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.CountDownLatch;
 
 @Component
-public class KafkaComsumer implements Runnable{
+public class KafkaComsumer implements Runnable {
 
     @KafkaListener(topics = "test001")
-    public void listen(String message){
+    public void listen(String message) {
         System.out.println("receive message ---------- " + message);
     }
 

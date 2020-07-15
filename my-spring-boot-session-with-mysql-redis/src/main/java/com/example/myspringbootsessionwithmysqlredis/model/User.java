@@ -13,12 +13,12 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name="user")
+@Table(name = "user")
 @Getter
 @Setter
 public class User {
     @Id
-    @GenericGenerator(name = "idGenerator",strategy = "uuid")
+    @GenericGenerator(name = "idGenerator", strategy = "uuid")
     @GeneratedValue(generator = "idGenerator")
     private String id;
     @NotBlank(message = "account can not be empty")

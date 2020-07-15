@@ -9,32 +9,38 @@ import org.springframework.boot.test.context.SpringBootTest;
 class MySpringBootRedisApplicationTests {
     @Autowired
     private MyRedisService service;
+
     @Test
     void contextLoads() {
     }
+
     @Test
-    void testStringRedisTemplate(){
+    void testStringRedisTemplate() {
         service.testStringRedisTemplate();
     }
+
     @Test
-    void testRedisTemplate(){
+    void testRedisTemplate() {
         service.testRedisTemplate();
     }
+
     @Test
-    void testRedisList(){
+    void testRedisList() {
         service.testRedisList();
     }
+
     @Test
-    void testRedisHash(){
+    void testRedisHash() {
         service.testRedisHash();
     }
+
     @Test
-    void testRedisSet(){
+    void testRedisSet() {
         service.testRedisSet();
     }
 
     @Test
-    void testRedisZSet(){
+    void testRedisZSet() {
         service.testRedisZSet();
     }
 

@@ -12,15 +12,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class ObjectTest {
 
-	@Autowired
-	private ObjectSender sender;
+    @Autowired
+    private ObjectSender sender;
 
-	@Test
-	public void sendOject() throws Exception {
-		User user=new User();
-		user.setName("neo");
-		user.setPass("123456");
-		sender.send(user);
-	}
+    @Test
+    public void sendOject() throws Exception {
+        User user = new User();
+        user.setName("neo");
+        user.setPass("123456");
+        sender.send(user);
+    }
 
 }

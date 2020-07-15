@@ -12,11 +12,11 @@ import java.util.Date;
 @Component
 public class SchedulerTask {
 
-    private int count=0;
+    private int count = 0;
 
-    @Scheduled(cron="*/6 * * * * ?")
-    private void process(){
-        System.out.println("this is scheduler task runing  "+(count++));
+    @Scheduled(cron = "*/6 * * * * ?")
+    private void process() {
+        System.out.println("this is scheduler task runing  " + (count++));
     }
 
 }

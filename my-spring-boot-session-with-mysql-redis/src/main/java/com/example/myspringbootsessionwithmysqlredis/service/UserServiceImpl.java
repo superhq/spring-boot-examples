@@ -29,10 +29,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public BaseResponse login(String account, String password) {
-        BaseResponse response = new BaseResponse(-1,"error");
+        BaseResponse response = new BaseResponse(-1, "error");
         User user = this.findByAccount(account);
-        if(user != null){
-            if(user.getPassword().equals(password)){
+        if (user != null) {
+            if (user.getPassword().equals(password)) {
                 response.setCode(0);
                 response.setMessage("success");
                 return response;

@@ -13,14 +13,14 @@ import javax.annotation.Resource;
 @SpringBootTest
 public class RepositoryTests {
 
-	@Resource
+    @Resource
     private MemcachedRunner memcachedRunner;
 
-	@Test
-	public void testSetGet()  {
-		MemcachedClient memcachedClient = memcachedRunner.getClient();
-		memcachedClient.set("testkey",1000,"666666");
-		System.out.println("***********  "+memcachedClient.get("testkey").toString());
-	}
+    @Test
+    public void testSetGet() {
+        MemcachedClient memcachedClient = memcachedRunner.getClient();
+        memcachedClient.set("testkey", 1000, "666666");
+        System.out.println("***********  " + memcachedClient.get("testkey").toString());
+    }
 
 }

@@ -20,7 +20,7 @@ public class UserController {
     }
 
     @GetMapping("/")
-    public List<User> getAll(){
+    public List<User> getAll() {
         return mapper.getAll();
     }
 }

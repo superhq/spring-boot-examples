@@ -34,8 +34,8 @@ public class UserController {
     @RequestMapping("/add")
     //@RequiresPermissions("user:opt")
     @RequiresRoles({"admin"})
-    public String add(HttpServletRequest request,Model model) {
-          System.out.println(request.getAttributeNames());
+    public String add(HttpServletRequest request, Model model) {
+        System.out.println(request.getAttributeNames());
 //        com.oldalexspringcloudlogin.model.addAttribute("msg",)
         return "add";
     }
@@ -72,14 +72,12 @@ public class UserController {
     }
 
     @RequestMapping("500")
-    public String unAuthorization()
-    {
+    public String unAuthorization() {
         return "500";
     }
 
     @RequestMapping("error")
-    public String error(HttpServletRequest request)
-    {
+    public String error(HttpServletRequest request) {
         System.out.println(request.toString());
         return "error";
     }

@@ -8,8 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.security.Provider;
 
 
-
-
 @SpringBootApplication
 public class MySpringBootAopApplication {
     public static void main(String[] args) {

@@ -11,22 +11,22 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class TopicTest {
 
-	@Autowired
-	private TopicSender sender;
+    @Autowired
+    private TopicSender sender;
 
-	@Test
-	public void topic() throws Exception {
-		sender.send();
-	}
+    @Test
+    public void topic() throws Exception {
+        sender.send();
+    }
 
-	@Test
-	public void topic1() throws Exception {
-		sender.send1();
-	}
+    @Test
+    public void topic1() throws Exception {
+        sender.send1();
+    }
 
-	@Test
-	public void topic2() throws Exception {
-		sender.send2();
-	}
+    @Test
+    public void topic2() throws Exception {
+        sender.send2();
+    }
 
 }

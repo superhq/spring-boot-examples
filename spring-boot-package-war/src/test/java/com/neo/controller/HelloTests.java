@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebAppConfiguration
 public class HelloTests {
 
-	
+
     private MockMvc mvc;
 
     @Before

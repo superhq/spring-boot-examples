@@ -29,15 +29,15 @@ public class DistributeLockAspect {
         Object[] args = joinPoint.getArgs();
         HttpSession session = null;
         for (Object obj : args) {
-            if(obj instanceof HttpServletRequest){
+            if (obj instanceof HttpServletRequest) {
                 session = ((HttpServletRequest) obj).getSession();
                 break;
             }
         }
-        if(session == null){
+        if (session == null) {
             throw new Exception("no HttpServletRequest argument in method:" + joinPoint.getSignature() + "  Stop!");
         }
-        String key = String.format("%s-%s",distributeLock.key(),session.getId());
+        String key = String.format("%s-%s", distributeLock.key(), session.getId());
         String value = distributeLockService.getLock(key, distributeLock.timeout(), distributeLock.timeUnit());
 
         if (StringUtil.isNullOrEmpty(value)) {

@@ -9,9 +9,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class MultiMongodbApplicationTests {
 
-	@Test
-	public void contextLoads() {
-		System.out.println("hello world");
-	}
+    @Test
+    public void contextLoads() {
+        System.out.println("hello world");
+    }
 
 }

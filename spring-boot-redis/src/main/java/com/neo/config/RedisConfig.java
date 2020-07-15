@@ -14,10 +14,10 @@ import org.springframework.data.redis.core.RedisTemplate;
 
 @Configuration
 @EnableCaching
-public class RedisConfig extends CachingConfigurerSupport{
-	
-	@Bean
-	public KeyGenerator keyGenerator() {
+public class RedisConfig extends CachingConfigurerSupport {
+
+    @Bean
+    public KeyGenerator keyGenerator() {
         return new KeyGenerator() {
             @Override
             public Object generate(Object target, Method method, Object... params) {
