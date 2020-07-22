@@ -2,6 +2,7 @@ package com.example.laoalexelasticsearch.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
@@ -13,6 +14,7 @@ import java.util.List;
 @Document(indexName = "blog")
 @Setter
 @Getter
+@ToString
 public class Article {
     @Id
     private String id;
