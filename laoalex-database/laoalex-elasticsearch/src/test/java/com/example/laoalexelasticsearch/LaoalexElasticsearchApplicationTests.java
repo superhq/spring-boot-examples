@@ -3,13 +3,27 @@ package com.example.laoalexelasticsearch;
 import com.example.laoalexelasticsearch.entity.Article;
 import com.example.laoalexelasticsearch.entity.Author;
 import com.example.laoalexelasticsearch.repository.ArticleRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
+import org.springframework.data.elasticsearch.core.SearchHits;
+import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
+import org.springframework.data.elasticsearch.core.query.Query;
+
+import java.util.Queue;
 
 import static java.util.Arrays.asList;
+import static org.elasticsearch.index.query.QueryBuilders.regexpQuery;
 
 @SpringBootTest
 class LaoalexElasticsearchApplicationTests {
@@ -44,4 +58,42 @@ class LaoalexElasticsearchApplicationTests {
         articleRepository.save(article);
     }
 
+    @Test
+    void queryAuthorName() throws JsonProcessingException {
+        Page<Article> articles = articleRepository.findByAuthorsName("LaoAlex", PageRequest.of(0,10));
+        //将对象转为Json字符串
+        ObjectWriter objectWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = objectWriter.writeValueAsString(articles);
+        System.out.println(json);
+    }
+
+    //自定义查询
+    @Test
+    void queryAuthorNameByCustom() throws JsonProcessingException {
+        Page<Article> articles = articleRepository.findByAuthorsNameUsingCustomQuery("John",PageRequest.of(0,10));
+        //将对象转为Json字符串
+        ObjectWriter objectWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = objectWriter.writeValueAsString(articles);
+        System.out.println(json);
+    }
+
+    //关键字查询
+    @Test
+    void queryTileContain() throws JsonProcessingException {
+        Page<Article> articles = articleRepository.findByTitleIsContaining("2",PageRequest.of(0,10));
+        //将对象转为Json字符串
+        ObjectWriter objectWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = objectWriter.writeValueAsString(articles);
+        System.out.println(json);
+    }
+    //使用Template进行关键字查询
+    @Test
+    void queryTileContainByTemplate() throws JsonProcessingException {
+        Query query = new NativeSearchQueryBuilder().withFilter(regexpQuery("title",".*elasticsearch2.*")).build();
+        SearchHits<Article> articles = elasticsearchRestTemplate.search(query, Article.class, IndexCoordinates.of("blog"));
+        //将对象转为Json字符串
+        ObjectWriter objectWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = objectWriter.writeValueAsString(articles);
+        System.out.println(json);
+    }
 }

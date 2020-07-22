@@ -10,9 +10,14 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ArticleRepository extends ElasticsearchRepository<Article,String> {
-//    Page<Article> findByAuthorsName(String name, Pageable pageable);
-//
-//    @Query("{\"bool\": {\"must\": [{\"match\": {\"authors.name\": \"?0\"}}]}}")
-//    Page<Article> findByAuthorsNameUsingCustomQuery(String name, Pageable pageable);
+
+    //下面的这两个查询的作用是一样的。一个采用默认的实现方式，一个采用自定义的实现方式
+    Page<Article> findByAuthorsName(String name, Pageable pageable);
+
+    @Query("{\"bool\": {\"must\": [{\"match\": {\"authors.name\": \"?0\"}}]}}")
+    Page<Article> findByAuthorsNameUsingCustomQuery(String name, Pageable pageable);
+
+    Page<Article> findByTitleIsContaining(String word,Pageable pageable);
+
 
 }
