@@ -4,3 +4,6 @@ https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#el
 
 
 https://www.baeldung.com/spring-data-elasticsearch-tutorial
+
+
+https://stackoverflow.com/questions/47792915/getting-jackson-parsing-error-while-serializing-aggregatedpage-in-spring-data-el

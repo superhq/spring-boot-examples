@@ -2,17 +2,29 @@ package com.example.laoalexelasticsearch;
 
 import com.example.laoalexelasticsearch.entity.Article;
 import com.example.laoalexelasticsearch.entity.Author;
+import com.example.laoalexelasticsearch.entity.Heartbeat;
 import com.example.laoalexelasticsearch.repository.ArticleRepository;
+import com.example.laoalexelasticsearch.repository.HeartbeatRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import org.elasticsearch.search.aggregations.Aggregation;
+
+import org.elasticsearch.search.aggregations.AggregationBuilders;
+
+import org.elasticsearch.search.aggregations.bucket.terms.ParsedStringTerms;
+
+import org.elasticsearch.search.aggregations.bucket.terms.StringTerms;
+import org.elasticsearch.search.aggregations.bucket.terms.Terms;
+import org.elasticsearch.search.aggregations.bucket.terms.TermsAggregationBuilder;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.SearchHits;
 import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
@@ -20,9 +32,12 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.data.elasticsearch.core.query.Query;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 
 import static java.util.Arrays.asList;
+import static java.util.stream.Collectors.toList;
 import static org.elasticsearch.index.query.QueryBuilders.regexpQuery;
 
 @SpringBootTest
@@ -31,6 +46,10 @@ class LaoalexElasticsearchApplicationTests {
     private ArticleRepository articleRepository;
     @Autowired
     private ElasticsearchRestTemplate elasticsearchRestTemplate;
+    @Autowired
+    private ElasticsearchOperations elasticsearchOperations;
+    @Autowired
+    private HeartbeatRepository heartbeatRepository;
 
     @Test
     void contextLoads() {
@@ -150,5 +169,43 @@ class LaoalexElasticsearchApplicationTests {
         Page<Article> articles = articleRepository.findByTitle("Spring Data Elasticsearch",PageRequest.of(0,10));
         Article article = articles.getContent().get(0);
         articleRepository.delete(article);
+    }
+
+    @Test
+    void addHeartbeat(){
+        Heartbeat heartbeat = new Heartbeat("sn654321");
+        heartbeatRepository.save(heartbeat);
+    }
+
+    @Test
+    void aggsHeartbeat() throws JsonProcessingException {
+        TermsAggregationBuilder aggs = AggregationBuilders.terms("devices").field("sn.keyword");
+        NativeSearchQueryBuilder nativeSearchQueryBuilder = new NativeSearchQueryBuilder();
+        nativeSearchQueryBuilder.addAggregation(aggs);
+
+        NativeSearchQuery nativeSearchQuery = nativeSearchQueryBuilder.build();
+//        Page<Heartbeat> search = heartbeatRepository.search(nativeSearchQuery);
+//        List<Heartbeat> content = search.getContent();
+//        for(Heartbeat heartbeat:content){
+//            System.out.println(heartbeat);
+//        }
+
+        IndexCoordinates index = IndexCoordinates.of("heartbeat");
+        SearchHits<Heartbeat> result = elasticsearchOperations.search(nativeSearchQuery, Heartbeat.class,index);
+        System.out.println(result.toString());
+        Map<String, Aggregation> result_aggs = result.getAggregations().asMap();
+        ParsedStringTerms devices = (ParsedStringTerms)result_aggs.get("devices");
+        List<ParsedStringTerms.ParsedBucket> buckets = (List<ParsedStringTerms.ParsedBucket>) devices.getBuckets();
+        ObjectWriter ow = new ObjectMapper().writer();
+
+        for(Terms.Bucket bucket : buckets){
+
+            String bucket_str = ow.writeValueAsString(bucket);
+            System.out.println(bucket_str);
+
+        }
+
+
+
     }
 }
