@@ -17,6 +17,8 @@ import org.elasticsearch.search.aggregations.bucket.terms.ParsedStringTerms;
 import org.elasticsearch.search.aggregations.bucket.terms.StringTerms;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.aggregations.bucket.terms.TermsAggregationBuilder;
+import org.elasticsearch.search.aggregations.metrics.CardinalityAggregationBuilder;
+import org.elasticsearch.search.aggregations.metrics.ParsedCardinality;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -173,8 +175,11 @@ class LaoalexElasticsearchApplicationTests {
 
     @Test
     void addHeartbeat(){
-        Heartbeat heartbeat = new Heartbeat("sn654321");
-        heartbeatRepository.save(heartbeat);
+        for(int i =5000;i < 20000;i++) {
+            Heartbeat heartbeat = new Heartbeat("sn" + Integer.toString(i));
+            System.out.println(i);
+            heartbeatRepository.save(heartbeat);
+        }
     }
 
     @Test
@@ -196,16 +201,28 @@ class LaoalexElasticsearchApplicationTests {
         Map<String, Aggregation> result_aggs = result.getAggregations().asMap();
         ParsedStringTerms devices = (ParsedStringTerms)result_aggs.get("devices");
         List<ParsedStringTerms.ParsedBucket> buckets = (List<ParsedStringTerms.ParsedBucket>) devices.getBuckets();
-        ObjectWriter ow = new ObjectMapper().writer();
+        List<String> sn_list = buckets.stream().map(b -> b.getKeyAsString()).collect(toList());
+        System.out.println("sn count:" + sn_list.size());
+//        ObjectWriter ow = new ObjectMapper().writer();
+//
+//        for(Terms.Bucket bucket : buckets){
+//
+//            String bucket_str = ow.writeValueAsString(bucket);
+//            System.out.println(bucket_str);
+//
+//        }
+    }
 
-        for(Terms.Bucket bucket : buckets){
-
-            String bucket_str = ow.writeValueAsString(bucket);
-            System.out.println(bucket_str);
-
-        }
-
-
-
+    @Test
+    void countBruckets(){
+        CardinalityAggregationBuilder aggs = AggregationBuilders.cardinality("count").field("sn.keyword");
+        NativeSearchQueryBuilder nativeSearchQueryBuilder = new NativeSearchQueryBuilder();
+        nativeSearchQueryBuilder.addAggregation(aggs);
+        NativeSearchQuery nativeSearchQuery = nativeSearchQueryBuilder.build();
+        IndexCoordinates index = IndexCoordinates.of("heartbeat");
+        SearchHits<Heartbeat> result = elasticsearchOperations.search(nativeSearchQuery, Heartbeat.class,index);
+        Map<String, Aggregation> result_aggs = result.getAggregations().asMap();
+        ParsedCardinality parsedCardinality = (ParsedCardinality) result_aggs.get("count");
+        System.out.println("sn count:" + parsedCardinality.getValue());
     }
 }
