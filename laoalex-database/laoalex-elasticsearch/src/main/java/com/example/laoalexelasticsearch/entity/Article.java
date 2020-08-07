@@ -11,7 +11,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.util.List;
 
 //注意indexName要小写
-@Document(indexName = "blog")
+@Document(indexName = "blog3")
 @Setter
 @Getter
 @ToString
