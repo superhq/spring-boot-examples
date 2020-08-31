@@ -46,6 +46,7 @@
         <module>spring-boot-web-thymeleaf</module>
         <module>spring-boot-webflux</module>
         <module>my-security</module>
+        <module>servlet-demo</module>
     </modules>
     <!--    <dependencyManagement>-->
     <!--        <dependencies>-->
