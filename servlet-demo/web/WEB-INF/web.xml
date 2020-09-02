@@ -25,4 +25,7 @@
     <listener>
         <listener-class>conf.HelloServletRequestListener</listener-class>
     </listener>
+    <listener>
+        <listener-class>conf.HelloHttpSessionListener</listener-class>
+    </listener>
 </web-app>
