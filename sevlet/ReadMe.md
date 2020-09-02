@@ -1,0 +1,9 @@
+过滤器Filter：
+拦截器Interceptor：拦截是AOP的一种实现策略
+监听器Listener：
+
+Filter是基于函数回调的，而Interceptor则是基于Java反射的。
+Filter依赖于Servlet容器，而Interceptor不依赖于Servlet容器。
+Filter对几乎所有的请求起作用，而Interceptor只能对action请求起作用。
+Interceptor可以访问Action的上下文，值栈里的对象，而Filter不能。
+在action的生命周期里，Interceptor可以被多次调用，而Filter只能在容器初始化时调用一次。
