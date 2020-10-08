@@ -18,5 +18,14 @@ class DruidMybatisApplicationTests {
         SdfsFile file = fileMapper.SelectById(596660321903923200L);
         System.out.println(file);
     }
+    @Test
+    void testInsertFile(){
+        SdfsFile file = new SdfsFile();
+        file.setFile_id(1L);
+        file.setFile_size(0L);
+        file.setFile_digest("test");
+        fileMapper.InsertFile(file);
+        Object o = new Object();
+    }
 
 }
