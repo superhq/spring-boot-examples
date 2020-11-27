@@ -21,7 +21,7 @@ public class HelloWorld extends HttpServlet {
         writer.println("Servlet HelloWorld");
         System.out.println("servlet doGet");
         ServletContext ctx = req.getServletContext();
-        System.out.println("servlet:" + ctx.getAttribute("test"));
+        System.out.println("servlet:" + ctx.getAttribute("java-base/test"));
     }
 
     @Override

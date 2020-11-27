@@ -17,7 +17,7 @@ public class TestController {
 
     private Logger logger;
 
-    @GetMapping("/test")
+    @GetMapping("/java-base/test")
     public String Test() {
         logger.warning("this is a logger test");
         return "logger test";

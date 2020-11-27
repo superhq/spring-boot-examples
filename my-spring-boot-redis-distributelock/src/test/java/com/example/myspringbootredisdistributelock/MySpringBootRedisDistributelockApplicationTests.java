@@ -18,7 +18,7 @@ class MySpringBootRedisDistributelockApplicationTests {
 
     @Test
     void getLock() {
-        String value = distributeLockService.getLock("test", 30, TimeUnit.SECONDS);
+        String value = distributeLockService.getLock("java-base/test", 30, TimeUnit.SECONDS);
         if (value != null) {
             System.out.println("成功获取分布式锁，value=" + value);
         }
@@ -26,7 +26,7 @@ class MySpringBootRedisDistributelockApplicationTests {
 
     @Test
     void unLock() {
-        distributeLockService.unLock("test", "5d3baa10-57e9-4d18-8a70-b4a1c790fdfc");
+        distributeLockService.unLock("java-base/test", "5d3baa10-57e9-4d18-8a70-b4a1c790fdfc");
     }
 
 }

@@ -10,7 +10,7 @@ public class HelloServletContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("servlet context init");
         ServletContext ctx = sce.getServletContext();
-        ctx.setAttribute("test","this is a test attribute");
+        ctx.setAttribute("java-base/test","this is a test attribute");
     }
 
     @Override

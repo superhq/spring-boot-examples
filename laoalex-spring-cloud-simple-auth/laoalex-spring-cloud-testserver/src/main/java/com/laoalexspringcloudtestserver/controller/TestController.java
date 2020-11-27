@@ -9,7 +9,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/java-base/test")
 public class TestController {
     @Value("${spring.application.name}")
     private String serverName;

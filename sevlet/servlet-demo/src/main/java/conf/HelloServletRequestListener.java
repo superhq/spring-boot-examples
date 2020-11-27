@@ -14,6 +14,6 @@ public class HelloServletRequestListener implements ServletRequestListener {
     public void requestInitialized(ServletRequestEvent sre) {
         System.out.println("request init");
         ServletContext ctx = sre.getServletContext();
-        System.out.println("request listener:" + ctx.getAttribute("test"));
+        System.out.println("request listener:" + ctx.getAttribute("java-base/test"));
     }
 }
